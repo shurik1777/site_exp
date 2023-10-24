@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style3.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <nav class="header-menu">
+                <a href="index.html" class="header-menu-link">Home</a>
+                <a href="#" class="header-menu-link">About</a>
+                <a href="#" class="header-menu-link">Services</a>
+                <a href="#" class="header-menu-link">Blog</a>
+                <a href="#" class="header-menu-link">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="content">
+        <div class="container">
+            <div class="content-left">
+                <h3 class="subtitle">Мои приключения с сайтом</h3>
+                <h1 class="title">заработать на счастливую жизнь!</h1>
+                <button class="button" onclick="printName()">Показать имя</button>
+            </div>
+            <div class="content-right">
+                <img src="images/1.png" alt="">
+            </div>
+        </div>
+    </section>
+
+    <script>
+    function printName() {
+        var name = prompt("Введите ваше имя:");
+        var overlay = document.createElement("div");
+        overlay.classList.add("overlay");
+    
+        var message = document.createElement("div");
+        message.classList.add("message");
+        message.innerHTML = "Привет, " + name + "!";
+    
+        overlay.appendChild(message);
+        document.body.appendChild(overlay);
+        
+        message.addEventListener("click", function() {
+                overlay.remove();
+            });
+    }
+    </script>
+</body>
+</html>
